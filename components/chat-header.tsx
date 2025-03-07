@@ -12,6 +12,7 @@ import { useSidebar } from './ui/sidebar';
 import { memo } from 'react';
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 import { VisibilityType, VisibilitySelector } from './visibility-selector';
+import { Driveselector } from './Drive-selector';
 
 function PureChatHeader({
   chatId,
@@ -52,12 +53,17 @@ function PureChatHeader({
         </Tooltip>
       )}
 
-      {!isReadonly && (
+      {/* {!isReadonly && (
         <ModelSelector
           selectedModelId={selectedModelId}
           className="order-1 md:order-2"
         />
-      )}
+      )} */}
+
+        <Driveselector
+          selectedModelId={selectedModelId}
+          className="order-1 md:order-2"
+        />
 
       {!isReadonly && (
         <VisibilitySelector
