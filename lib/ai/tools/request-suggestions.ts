@@ -7,7 +7,7 @@ import { generateUUID } from '@/lib/utils';
 import { myProvider } from '../providers';
 
 interface RequestSuggestionsProps {
-  session: Session;
+  session: any;
   dataStream: DataStreamWriter;
 }
 

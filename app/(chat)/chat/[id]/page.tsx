@@ -1,7 +1,7 @@
 import { cookies } from 'next/headers';
 import { notFound } from 'next/navigation';
 
-import { auth } from '@/app/(auth)/auth';
+
 import { Chat } from '@/components/chat';
 import { getChatById, getMessagesByChatId } from '@/lib/db/queries';
 import { convertToUIMessages } from '@/lib/utils';
@@ -17,7 +17,8 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
     notFound();
   }
 
-  const session = await auth();
+  const session = {user:{id:"assad",exipres:"33342442424342424"}};
+
 
   if (chat.visibility === 'private') {
     if (!session || !session.user) {

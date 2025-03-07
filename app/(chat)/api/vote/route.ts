@@ -1,4 +1,4 @@
-import { auth } from '@/app/(auth)/auth';
+
 import { getChatById, getVotesByChatId, voteMessage } from '@/lib/db/queries';
 
 export async function GET(request: Request) {
@@ -9,7 +9,8 @@ export async function GET(request: Request) {
     return new Response('chatId is required', { status: 400 });
   }
 
-  const session = await auth();
+  const session = {user:{id:"assad",exipres:"33342442424342424"}};
+
 
   if (!session || !session.user || !session.user.email) {
     return new Response('Unauthorized', { status: 401 });
