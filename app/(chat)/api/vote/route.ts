@@ -1,5 +1,6 @@
 
 import { getChatById, getVotesByChatId, voteMessage } from '@/lib/db/queries';
+import { useSession } from 'next-auth/react';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -9,7 +10,7 @@ export async function GET(request: Request) {
     return new Response('chatId is required', { status: 400 });
   }
 
-  const session = {user:{id:"assad",exipres:"33342442424342424"}};
+  const session =useSession()
 
 
   if (!session || !session.user || !session.user.email) {
@@ -43,7 +44,8 @@ export async function PATCH(request: Request) {
     return new Response('messageId and type are required', { status: 400 });
   }
 
-  const session = await auth();
+  const session =useSession()
+
 
   if (!session || !session.user || !session.user.email) {
     return new Response('Unauthorized', { status: 401 });
