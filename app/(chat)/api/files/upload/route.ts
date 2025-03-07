@@ -18,7 +18,7 @@ const FileSchema = z.object({
 });
 
 export async function POST(request: Request) {
-  const session = {user:{id:"assad",exipres:"33342442424342424"}};
+  const session = {user:{id:"assad",exipres:"33342442424342424",email:"test@yopmail.com"}};
 
 
   if (!session) {

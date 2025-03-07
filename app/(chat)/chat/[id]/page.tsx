@@ -17,7 +17,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
     notFound();
   }
 
-  const session = {user:{id:"assad",exipres:"33342442424342424"}};
+  const session = {user:{id:"assad",exipres:"33342442424342424",email:"test@yopmail.com"}};
 
 
   if (chat.visibility === 'private') {

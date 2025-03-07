@@ -2,7 +2,7 @@
 import { getChatsByUserId } from '@/lib/db/queries';
 
 export async function GET() {
-  const session = {user:{id:"assad",exipres:"33342442424342424"}};
+  const session = {user:{id:"assad",exipres:"33342442424342424",email:"test@yopmail.com"}};
 
 
   if (!session || !session.user) {

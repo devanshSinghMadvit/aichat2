@@ -39,7 +39,7 @@ export async function POST(request: Request) {
       selectedChatModel: string;
     } = await request.json();
 
-    const session = {user:{id:"assad",exipres:"33342442424342424"}};
+    const session = {user:{id:"assad",exipres:"33342442424342424",email:"test@yopmail.com"}};
 
  
     const userMessage = getMostRecentUserMessage(messages);
@@ -146,7 +146,7 @@ export async function DELETE(request: Request) {
     return new Response('Not Found', { status: 404 });
   }
 
-  const session = {user:{id:"assad",exipres:"33342442424342424"}};
+  const session = {user:{id:"assad",exipres:"33342442424342424",email:"test@yopmail.com"}};
 
 
   if (!session || !session.user) {

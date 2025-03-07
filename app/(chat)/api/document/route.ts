@@ -14,7 +14,7 @@ export async function GET(request: Request) {
     return new Response('Missing id', { status: 400 });
   }
 
-      const session = {user:{id:"assad",exipres:"33342442424342424"}};
+      const session = {user:{id:"assad",exipres:"33342442424342424",email:"test@yopmail.com"}};
 
 
   if (!session || !session.user) {
@@ -44,7 +44,7 @@ export async function POST(request: Request) {
     return new Response('Missing id', { status: 400 });
   }
 
-      const session = {user:{id:"assad",exipres:"33342442424342424"}};
+      const session = {user:{id:"assad",exipres:"33342442424342424",email:"test@yopmail.com"}};
 
 
   if (!session) {
@@ -83,7 +83,7 @@ export async function PATCH(request: Request) {
     return new Response('Missing id', { status: 400 });
   }
 
-      const session = {user:{id:"assad",exipres:"33342442424342424"}};
+      const session = {user:{id:"assad",exipres:"33342442424342424",email:"test@yopmail.com"}};
 
 
   if (!session || !session.user) {

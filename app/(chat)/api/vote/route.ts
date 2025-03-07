@@ -46,6 +46,7 @@ export async function PATCH(request: Request) {
   const session = {user:{id:"assad",exipres:"33342442424342424",email:"test@yopmail.com"}};
 
 
+
   if (!session || !session.user || !session.user.email) {
     return new Response('Unauthorized', { status: 401 });
   }
