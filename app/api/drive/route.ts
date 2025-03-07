@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth, getDriveClient } from "@/lib/auth";
 
+interface CustomSession {
+  accessToken?: string;
+  [key: string]: any;
+}
+
 type DriveItem = {
   id: string;
   name: string;
@@ -9,7 +14,7 @@ type DriveItem = {
 };
 
 export async function GET(req: NextRequest) {
-  const session = await auth();
+  const session = await auth() as CustomSession;
   if (!session?.accessToken) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

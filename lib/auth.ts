@@ -18,14 +18,14 @@ export const authConfig = {
     signIn: "/login",
   },
   callbacks: {
-    async session({ session, token }) {
+    async session({ session, token }:{ session:any, token:any }) {
       if (token?.sub) {
         session.user.id = token.sub;
       }
       session.accessToken = token.access_token as string;
       return session;
     },
-    async jwt({ token, account }) {
+    async jwt({ token, account }:{ token:any, account:any }) {
       if (account) {
         token.access_token = account.access_token;
       }
